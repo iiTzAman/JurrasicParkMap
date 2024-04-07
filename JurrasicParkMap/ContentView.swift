@@ -13,7 +13,10 @@ struct ContentView: View {
     @State var searchText = ""
     @State var alphabetical = false
     
+    @State var currentSelection: PredatorType = .all
+    
     var filteredDinosaurList: [JurrasicParkData] {
+        jurassicPredators.filterByType(type: currentSelection)
         jurassicPredators.sortData(by: alphabetical)
         return jurassicPredators.filterData(for: searchText)
     }
@@ -62,6 +65,18 @@ struct ContentView: View {
                         Image(systemName: alphabetical ? "film" : "textformat")
                             .foregroundColor(.white)
                             .symbolEffect(.bounce, value: alphabetical)
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing){
+                    Menu {
+                        Picker("Filter", selection: $currentSelection.animation()) {
+                            ForEach(PredatorType.allCases) { type in
+                                Label(type.rawValue.capitalized, systemImage: type.image)
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "line.3.horizontal.decrease")
+                            .foregroundColor(.white)
                     }
                 }
             }

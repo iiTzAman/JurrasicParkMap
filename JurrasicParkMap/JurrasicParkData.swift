@@ -29,7 +29,12 @@ struct MovieScenes: Codable, Identifiable {
     let scene_description: String
 }
 
-enum PredatorType: String, Codable {
+enum PredatorType: String, Codable, CaseIterable, Identifiable {
+    var id: PredatorType {
+        return self
+    }
+    
+    case all
     case land
     case air
     case sea
@@ -42,6 +47,21 @@ enum PredatorType: String, Codable {
                 .teal
         case .sea:
                 .blue
+        case .all:
+                .black
+        }
+    }
+    
+    var image: String {
+        switch self {
+        case .all:
+            "square.stack.3d.up.fill"
+        case .land:
+            "leaf.fill"
+        case .air:
+            "wind"
+        case .sea:
+            "drop.fill"
         }
     }
 }

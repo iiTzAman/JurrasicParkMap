@@ -8,6 +8,7 @@
 import Foundation
 
 class Predators {
+    var allPredatorsList: [JurrasicParkData] = []
     var predator: [JurrasicParkData] = []
     
     init(){
@@ -19,7 +20,8 @@ class Predators {
             do{
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
-                predator = try decoder.decode([JurrasicParkData].self, from: data)
+                allPredatorsList = try decoder.decode([JurrasicParkData].self, from: data)
+                predator = allPredatorsList
             }catch{
                 print("Error getting data")
             }
@@ -42,6 +44,16 @@ class Predators {
                 dinosaur1.name < dinosaur2.name
             }else {
                 dinosaur1.id < dinosaur2.id
+            }
+        }
+    }
+    
+    func filterByType(type: PredatorType){
+        if type == .all {
+            predator = allPredatorsList
+        } else {
+            predator = allPredatorsList.filter { dinosaur in
+                type == dinosaur.type
             }
         }
     }

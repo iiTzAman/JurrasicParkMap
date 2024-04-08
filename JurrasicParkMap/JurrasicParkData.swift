@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import MapKit
 
 struct JurrasicParkData: Codable, Identifiable {
     let id: Int
@@ -21,7 +22,12 @@ struct JurrasicParkData: Codable, Identifiable {
     var image: String {
        return name.lowercased().replacingOccurrences(of: " ", with: "")
     }
+    
+    var location: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
 }
+
 
 struct MovieScenes: Codable, Identifiable {
     let id: Int

@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import MapKit
+
 
 class Predators {
     var allPredatorsList: [JurrasicParkData] = []

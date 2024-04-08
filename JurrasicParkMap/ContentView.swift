@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
     
@@ -25,9 +26,7 @@ struct ContentView: View {
         NavigationStack{
             List(filteredDinosaurList){ predator in
                 NavigationLink {
-                    Image(predator.image)
-                        .resizable()
-                        .scaledToFit()
+                    Details(dinosaur: predator, position: .camera(MapCamera(centerCoordinate: predator.location, distance: 30000)))
                 } label: {
                     HStack(){
                         Image(predator.image)
@@ -79,8 +78,7 @@ struct ContentView: View {
                             .foregroundColor(.white)
                     }
                 }
-            }
-            
+            }            
         }
         .preferredColorScheme(.dark)
     }

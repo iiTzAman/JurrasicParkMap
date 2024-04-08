@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		81481AE02BC34E8B00CF016F /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81481ADF2BC34E8B00CF016F /* Details.swift */; };
+		81481AE22BC39A7300CF016F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81481AE12BC39A7300CF016F /* MapView.swift */; };
 		81B561352BC0890D00F8BB73 /* JurrasicParkMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B561342BC0890D00F8BB73 /* JurrasicParkMapApp.swift */; };
 		81B561372BC0890D00F8BB73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B561362BC0890D00F8BB73 /* ContentView.swift */; };
 		81B561392BC0890F00F8BB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B561382BC0890F00F8BB73 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		81481ADF2BC34E8B00CF016F /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		81481AE12BC39A7300CF016F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		81B561312BC0890D00F8BB73 /* JurrasicParkMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JurrasicParkMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B561342BC0890D00F8BB73 /* JurrasicParkMapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JurrasicParkMapApp.swift; sourceTree = "<group>"; };
 		81B561362BC0890D00F8BB73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				81B561342BC0890D00F8BB73 /* JurrasicParkMapApp.swift */,
 				81B561362BC0890D00F8BB73 /* ContentView.swift */,
 				81481ADF2BC34E8B00CF016F /* Details.swift */,
+				81481AE12BC39A7300CF016F /* MapView.swift */,
 				81B561482BC0926F00F8BB73 /* Predators.swift */,
 				81B561462BC0917D00F8BB73 /* JurrasicParkData.swift */,
 				81B561442BC0913E00F8BB73 /* AppData.json */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81B561372BC0890D00F8BB73 /* ContentView.swift in Sources */,
+				81481AE22BC39A7300CF016F /* MapView.swift in Sources */,
 				81481AE02BC34E8B00CF016F /* Details.swift in Sources */,
 				81B561472BC0917D00F8BB73 /* JurrasicParkData.swift in Sources */,
 				81B561492BC0926F00F8BB73 /* Predators.swift in Sources */,
@@ -296,6 +300,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +330,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

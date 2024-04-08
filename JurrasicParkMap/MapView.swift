@@ -10,13 +10,13 @@ import MapKit
 
 struct MapView: View {
     
-    let dinosaurs = Predators()
+    let predator: [JurrasicParkData]    
     @State var location: MapCameraPosition
     @State var sateliteView = false
     
     var body: some View {
         Map(position: $location){
-            ForEach(dinosaurs.allPredatorsList) {
+            ForEach(predator) {
                 dinosaurs in
                 Annotation(dinosaurs.name, coordinate: dinosaurs.location) {
                     Image(dinosaurs.image)
@@ -47,5 +47,5 @@ struct MapView: View {
 }
 
 #Preview {
-    MapView(location: .camera(MapCamera(centerCoordinate: Predators().allPredatorsList[4].location, distance: 1000, heading: 250, pitch: 80)))
+    MapView(predator: Predators().allPredatorsList, location: .camera(MapCamera(centerCoordinate: Predators().allPredatorsList[4].location, distance: 1000, heading: 250, pitch: 80)))
 }

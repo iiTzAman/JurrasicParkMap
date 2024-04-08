@@ -12,6 +12,7 @@ struct Details: View {
     
     @Environment(\.openURL) var openURL
     
+    var dinosaurList: [JurrasicParkData]
     var dinosaur: JurrasicParkData
     
     @State var position: MapCameraPosition
@@ -42,7 +43,7 @@ struct Details: View {
                         .bold()
                     
                     NavigationLink{
-                        MapView(location: .camera(MapCamera(centerCoordinate: dinosaur.location, distance: 1500, heading: 250, pitch: 80)))
+                        MapView(predator: dinosaurList, location: .camera(MapCamera(centerCoordinate: dinosaur.location, distance: 1500, heading: 250, pitch: 80)))
                     } label: {
                         Map(position: $position){
                             Annotation(dinosaur.name, coordinate: dinosaur.location) {
@@ -113,7 +114,7 @@ struct Details: View {
 
 #Preview {
     NavigationStack{
-        Details(dinosaur: Predators().allPredatorsList[10], position: .camera(MapCamera(centerCoordinate: Predators().predator[5].location, distance: 30000)))
+        Details(dinosaurList: Predators().allPredatorsList, dinosaur: Predators().allPredatorsList[10], position: .camera(MapCamera(centerCoordinate: Predators().predator[5].location, distance: 30000)))
             .preferredColorScheme(.dark)
     }
 }

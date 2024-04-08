@@ -26,7 +26,7 @@ struct ContentView: View {
         NavigationStack{
             List(filteredDinosaurList){ predator in
                 NavigationLink {
-                    Details(dinosaur: predator, position: .camera(MapCamera(centerCoordinate: predator.location, distance: 30000)))
+                    Details(dinosaurList: filteredDinosaurList,dinosaur: predator, position: .camera(MapCamera(centerCoordinate: predator.location, distance: 30000)))
                 } label: {
                     HStack(){
                         Image(predator.image)
